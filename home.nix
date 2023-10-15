@@ -99,7 +99,7 @@ in {
     homeDirectory = "/home/${username}";
 
     # FIXME: set your preferred $EDITOR
-    sessionVariables.EDITOR = "${pkgs.neovim}/bin/nvim";
+    sessionVariables.EDITOR = "/home/gabs/.local/bin/lvim";
     # FIXME: set your preferred $SHELL
     sessionVariables.SHELL = "/etc/profiles/per-user/${username}/bin/zsh";
   };
@@ -162,8 +162,8 @@ in {
         side-by-side = true;
         navigate = true;
       };
-      userEmail = ""; # FIXME: set your git email
-      userName = ""; #FIXME: set your git username
+      userEmail = "gabs.simon@outlook.com"; # FIXME: set your git email
+      userName = "gabs-simon"; #FIXME: set your git username
       extraConfig = {
         # FIXME: uncomment the next lines if you want to be able to clone private https repos
         # url = {

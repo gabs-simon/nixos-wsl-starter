@@ -1,6 +1,8 @@
 {
   description = "NixOS configuration";
 
+  inputs.vscode-server.url = "github:nix-community/nixos-vscode-server";
+
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
   inputs.nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
@@ -77,10 +79,14 @@
 
       nixosConfigurations.nixos = mkNixosConfiguration {
         hostname = "nixos";
-        username = "nixos"; # FIXME: replace with your own username!
+        username = "gabs"; # FIXME: replace with your own username!
         modules = [
           nixos-wsl.nixosModules.wsl
           ./wsl.nix
+          vscode-server.nixosModules.default
+          ({ config, pkgs, ... }: {
+            services.vscode-server.enable = true;
+          })
         ];
       };
     };
