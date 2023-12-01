@@ -14,7 +14,7 @@
   inputs.nixos-wsl.url = "github:nix-community/NixOS-WSL";
   inputs.nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
 
-  inputs.nix-index-database.url = "github:Mic92/nix-index-database";
+  inputs.nix-index-database.url = "github:nix-community/nix-index-database";
   inputs.nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs = inputs:
@@ -79,7 +79,7 @@
 
       nixosConfigurations.nixos = mkNixosConfiguration {
         hostname = "nixos";
-        username = "gabs"; # FIXME: replace with your own username!
+        username = "gabs";
         modules = [
           nixos-wsl.nixosModules.wsl
           ./wsl.nix
